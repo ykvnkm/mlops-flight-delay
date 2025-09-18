@@ -7,18 +7,27 @@ bash
 ```
 mlops-flight-delay/
 │
-├── data/                # Данные (версируются через DVC)
-├── src/
-│   ├── preprocess.py    # Очистка и подготовка данных
-│   ├── train.py         # Обучение модели
-│   ├── predict.py       # Скрипт для предсказаний
-│   ├── api.py           # REST API (FastAPI)
-│   └── utils.py
+├── data/                
+│   └── raw/             # исходные данные (через DVC)
 │
-├── models/              # Сохраненные модели (MLflow)
-├── airflow/             # DAG для пайплайнов
-├── docker/              # Dockerfile
-├── tests/               # pytest тесты
-├── .github/workflows/   # CI/CD
+├── models/              # сохранённые модели
+├── reports/             # отчёты (метрики, графики)
+│
+├── src/
+│   ├── preprocess.py    # очистка и подготовка данных
+│   ├── train.py         # обучение модели
+│   ├── evaluate.py      # оценка модели
+│   ├── predict.py       # скрипт для инференса
+│   ├── api.py           # REST API (FastAPI)
+│   └── utils.py         # вспомогательные функции
+│
+├── tests/               # unit-тесты
+│   └── test_dummy.py
+│
+├── .gitignore
+├── requirements.txt
+├── dvc.yaml
+├── Dockerfile
 └── README.md
+
 ```
