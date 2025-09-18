@@ -37,4 +37,21 @@ mlops-flight-delay/
 ├── Dockerfile
 └── README.md
 
+```
+### Предобработка данных:
 
+```bash
+python src/preprocess.py
+```
+
+### Обучение модели:
+
+```bash
+python src/train.py
+```
+
+### Запуск API:
+
+```bash
+uvicorn src.api:app --reload
+```
